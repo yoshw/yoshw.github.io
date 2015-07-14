@@ -1,0 +1,27 @@
+---
+layout: default
+comments: true
+twitter_plug: true
+---
+
+<article>
+  <time datetime="{{ page.date | xmlschema }}">{{ page.date | date: "%d %b, %Y" }}</time>
+  <h2>{{ page.title }}</h2>
+  {{ content }}
+</article>
+<p>Feel free to post questions and comments below. {% include twitter_plug.html %}</p>
+<hr>
+<div class="pagination">
+  {% if page.previous %}
+    <a class="pagination-item older" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Older</a>
+  {% else %}
+    <span class="pagination-item older">&larr; Older</span>
+  {% endif %}
+  {% if page.next %}
+    <a class="pagination-item newer" href="{{ page.next.url }}" title="{{ page.next.title }}">Newer &rarr;</a>
+  {% else %}
+    <span class="pagination-item newer">Newer &rarr;</span>
+  {% endif %}
+</div>
+{% include comments.html %}
+{% include footer.html %}

@@ -1,1 +1,20 @@
-Hello World
+---
+layout: default
+title: The Lark Compiling
+---
+
+<div id="home">
+  <h2>About</h2>
+
+  <p>You have reached the technical blog of Yoshua Wakeham, a maths/stats and computer science student at the University of Melbourne (in Melbourne, Australia). Yosh is pretty good with numbers, and codes in Python and C, with a smattering of experience in other languages including Java, Haskell, Bash, HTML and Scheme. He is passionate about using science, technology and engineering to change the world for the better. His technical interests include functional programming, data science, machine learning, and bioinformatics. He also likes explaining stuff to people.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:yoshwakeham@gmail.com">Email</a> | <a href="http://twitter.com/yoshw">Twitter</a> | <a href="http://plus.google.com/+YoshuaWakeham/">Google+</a> | <a href="http://github.com/yoshw">Github</a></p>
+
+  <h2>Blog Posts</h2>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
